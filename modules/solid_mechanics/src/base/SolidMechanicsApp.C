@@ -19,6 +19,8 @@
 #include "ElasticModel.h"
 #include "ElasticEnergyAux.h"
 #include "ElementsOnLineAux.h"
+#include "FailureIndexPD.h"
+#include "FailureIndexPDAux.h"
 #include "Gravity.h"
 #include "HomogenizationKernel.h"
 #include "HomogenizedElasticConstants.h"
@@ -128,6 +130,7 @@ SolidMechanicsApp::registerObjects(Factory & factory)
   registerAux(DomainIntegralQFunction);
   registerAux(DomainIntegralTopologicalQFunction);
   registerAux(ElementsOnLineAux);
+  registerAux(FailureIndexPDAux);
 
   registerBoundaryCondition(DashpotBC);
   registerBoundaryCondition(PresetVelocity);
@@ -189,6 +192,7 @@ SolidMechanicsApp::registerObjects(Factory & factory)
   registerUserObject(MaterialTensorOnLine);
   registerUserObject(CavityPressureUserObject);
   registerUserObject(CrackFrontDefinition);
+  registerUserObject(FailureIndexPD);
 }
 
 // External entry point for dynamic syntax association
